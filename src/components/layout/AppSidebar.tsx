@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { NAV } from "./nav";
 
@@ -12,13 +12,17 @@ export function AppSidebar() {
   return (
     <aside className="fixed inset-y-0 left-0 z-20 flex w-60 flex-col border-r border-slate-200 bg-white">
       {/* ロゴ */}
-      <div className="flex h-14 items-center gap-2 border-b border-slate-100 px-5">
-        <div className="flex h-7 w-7 items-center justify-center rounded-lg ai-gradient">
-          <Sparkles className="h-4 w-4 text-white" />
-        </div>
-        <span className="text-[15px] font-bold tracking-tight text-slate-800">
-          WORK BRIDGE
-        </span>
+      <div className="flex h-14 items-center border-b border-slate-100 px-5">
+        <Link href="/dashboard" aria-label="JobseeQ ホーム">
+          <Image
+            src="/jobseeq-logo.png"
+            alt="JobseeQ"
+            width={1073}
+            height={253}
+            priority
+            className="h-[30px] w-auto"
+          />
+        </Link>
       </div>
 
       {/* ナビ */}
